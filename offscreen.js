@@ -1,0 +1,1 @@
+"use strict";(()=>{var n=null;chrome.runtime.onMessage.addListener(e=>{if(e.target!=="offscreen"||e.type!=="play"||!e.url)return;n?.pause();let t=new Audio(e.url);t.volume=Math.max(0,Math.min(1,e.volume??.6)),t.playbackRate=.96+Math.random()*.08,t.play().catch(()=>{}),n=t});})();

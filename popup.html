@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>PipMouse</title>
+    <style>
+      :root { color-scheme: light dark; --bg: #fbf7f2; --card: #fff; --ink: #2d2541; --ink2: #6e6585; --accent: #8f7ce6; --line: #ece5f5; }
+      @media (prefers-color-scheme: dark) { :root { --bg: #17131f; --card: #241e31; --ink: #f1ecfb; --ink2: #aaa1bf; --line: #342c45; } }
+      * { box-sizing: border-box; }
+      body { margin: 0; width: 320px; background: var(--bg); color: var(--ink); font: 14px ui-rounded, "SF Pro Rounded", "Segoe UI", system-ui, sans-serif; }
+      header { display: flex; align-items: center; gap: 10px; padding: 14px 16px 8px; }
+      header img { width: 40px; height: 40px; border-radius: 12px; }
+      header b { font-size: 17px; flex: 1; }
+      #cheese { font-weight: 800; background: #fff4d1; color: #8a6400; padding: 3px 10px; border-radius: 99px; }
+      #task { margin: 6px 16px 10px; padding: 12px 14px; background: var(--card); border-radius: 16px; display: flex; flex-direction: column; gap: 2px; box-shadow: 0 4px 16px rgba(80,60,140,.08); }
+      #task .kicker { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; font-weight: 800; color: var(--accent); }
+      #task b { font-size: 16px; }
+      #task .time { color: var(--ink2); font-size: 13px; }
+      #actions { display: flex; flex-direction: column; gap: 6px; padding: 0 16px; }
+      button { border: 0; border-radius: 12px; padding: 10px 12px; font: 700 14px inherit; font-family: inherit; text-align: left; background: #efeaff; color: #2d2541; cursor: pointer; }
+      @media (prefers-color-scheme: dark) { button { background: #2f2747; color: #f1ecfb; } }
+      button.primary { background: var(--accent); color: #fff; }
+      button.ghost { background: transparent; color: var(--accent); }
+      form.quick { display: grid; grid-template-columns: 1fr auto; gap: 6px; background: var(--card); padding: 8px; border-radius: 14px; }
+      form.quick input, form.quick select { font: inherit; border: 1.5px solid var(--line); border-radius: 10px; padding: 8px 10px; background: var(--bg); color: var(--ink); }
+      form.quick input { grid-column: 1 / -1; }
+      form.quick button { text-align: center; }
+      #status { color: var(--ink2); font-size: 12px; padding: 10px 16px 14px; margin: 0; }
+    </style>
+  </head>
+  <body>
+    <header><img src="icons/icon-128.png" alt="" /><b id="name">PipMouse</b><span id="cheese"></span></header>
+    <div id="task"></div>
+    <div id="actions"></div>
+    <p id="status"></p>
+    <script src="popup.js"></script>
+  </body>
+</html>
